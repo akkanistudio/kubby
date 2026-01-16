@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBBY | Dashboard de Talentos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --accent: #e50914; /* Cor de destaque */
+            --text-main: #ffffff;
+            --text-sec: #a0a0a0;
+            --locked: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 40px 5%;
+        }
+
+        header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .user-badge {
+            background: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+        }
+
+        h2 { margin-bottom: 25px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+
+        /* Grid de Membros */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .member-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover { border-color: #444; }
+
+        /* Destaque para o seu perfil */
+        .member-card.me {
+            border: 2px solid var(--accent);
+            background: linear-gradient(145deg, #1a1a1a, #161616);
+        }
+
+        .role {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-sec);
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .name { font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; }
+
+        /* Área de Fotos (Exclusiva Ruan) */
+        .portfolio-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .portfolio-preview img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            background: #222;
+        }
+
+        .private-tag {
+            font-size: 0.7rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Seção de Grupos Bloqueados */
+        .locked-section {
+            opacity: 0.5;
+            padding-top: 40px;
+            border-top: 1px dashed #333;
+        }
+
+        .company-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0f0f0f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #1a1a1a;
+            cursor: not-allowed;
+        }
+
+        .lock-icon { font-size: 1.2rem; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KOBBY<span>.</span></div>
+        <div class="user-badge">Logado como: <strong>Ruan G. Dos Santos</strong></div>
+    </header>
+
+    <section>
+        <h2>Grupo: VOGUE <span style="font-size: 0.8rem; background: #27ae60; padding: 4px 8px; border-radius: 4px;">Ativo</span></h2>
+        
+        <div class="members-grid">
+            <!-- VOCÊ -->
+            <div class="member-card me">
+                <span class="role">Design Junior</span>
+                <div class="name">Ruan G. Dos Santos</div>
+                <p style="font-size: 0.8rem; color: #aaa;">Meus Projetos Selecionados:</p>
+                <div class="portfolio-preview">
+                    <img src="foto1.png" alt="Projeto 01">
+                    <img src="foto2.png" alt="Projeto 02">
+                </div>
+            </div>
+
+            <!-- Outros 15 Membros -->
+            <div class="member-card">
+                <span class="role">Diretor de Arte</span>
+                <div class="name">Ana Beatriz Souza</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Design Sênior</span>
+                <div class="name">Carlos Eduardo Oliveira</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Motion Designer</span>
+                <div class="name">Mariana Silva Costa</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Redator Criativo</span>
+                <div class="name">Fernando Henrique Lima</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Design Pleno</span>
+                <div class="name">Juliana Alves Pereira</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Social Media</span>
+                <div class="name">Lucas Mendes Rocha</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Fotógrafo</span>
+                <div class="name">Ricardo Santos Ferreira</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Ilustradora</span>
+                <div class="name">Camila Barbosa Gomes</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">UX Designer</span>
+                <div class="name">Thiago Martins Ribeiro</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Design Junior</span>
+                <div class="name">Isabella Letícia Santos</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Diretor Criativo</span>
+                <div class="name">Gustavo Henrique Lima</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Gerente de Projetos</span>
+                <div class="name">Patrícia Souza Alves</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Design Sênior</span>
+                <div class="name">Felipe Augusto Silva</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Assistente de Arte</span>
+                <div class="name">Beatriz Ferreira Lima</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+
+            <div class="member-card">
+                <span class="role">Copywriter</span>
+                <div class="name">Vinícius Oliveira Rocha</div>
+                <span class="private-tag">[Portfólio Privado]</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="locked-section">
+        <h2 style="color: #666;">Outros Grupos de Contratação</h2>
+        
+        <div class="company-group">
+            <div>
+                <div class="name" style="margin:0">Burger King</div>
+                <span class="role">Acesso Restrito à Equipe BK</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </div>
+
+        <div class="company-group">
+            <div>
+                <div class="name" style="margin:0">Coca-Cola Brasil</div>
+                <span class="role">Acesso Restrito à Equipe Coca</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </div>
+
+        <div class="company-group">
+            <div>
+                <div class="name" style="margin:0">Nubank</div>
+                <span class="role">Acesso Restrito à Equipe NU</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </div>
+    </section>
+
+</body>
+</html>
